@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quadratic Formula Calculator
     </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body>
@@ -19,21 +27,31 @@
 
     <!-- User Input -->
     <section>
-        <p>ax<sup>2</sup>+ bx + c = 0</p>
 
-        <form action="">
+        <form action="" class="form">
 
-            <label for="a">a = </label>
-            <input type="number" id="a" , required>
+            <div class="inputs">
+                <label for="a">a = </label>
+                <input type="number" id="a" required step="any">
 
-            <label for="b">b = </label>
-            <input type="number" id="b" , required>
+                <label for="b">b = </label>
+                <input type="number" id="b" required step="any">
 
-            <label for="c">c = </label>
-            <input type="number" id="c" , required>
+                <label for="c">c = </label>
+                <input type="number" id="c" required step="any">
+            </div>
 
-            <button type="submit" id="submitButton">Calculate</button>
-            <button type="reset">Clear</button>
+
+            <div class="buttons">
+                <button type="submit" id="submitButton">Calculate</button>
+                <button type="reset" id="clearButton">Clear</button>
+            </div>
+
+
+            <div class="info">
+                <p id="case">Case</p>
+                <p id="d">Discriminant</p>
+            </div>
 
             <p id="result">Solution:</p>
 
@@ -42,10 +60,16 @@
     </section>
 
     <!-- Formula Info -->
-    <section>
-        <p>x = -b&plusmn;&radic;b<sup>2</sup>-4ac&frasl;2a</p>
-        <p>where a ≠ 0</p>
+    <section class="formula-info">
+        <p class="formula">x = (-b &plusmn; &radic;(b<sup>2</sup> - 4ac)) / 2a</p>
+        <p class="equation">ax<sup>2</sup> + bx + c = 0</p>
+        <p class="note">where a &ne; 0</p>
     </section>
+
+
+    <footer>
+        <a href="https://github.com/AdamKirikisla/quadratic-solver">View on GitHub</a>
+    </footer>
 
     <script src="app.js"></script>
 </body>
