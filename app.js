@@ -45,9 +45,10 @@ form.addEventListener('submit', e => {
     // Case 3: D < 0 → two distinct imaginary roots
     const twoImgRoots = (d) => {
 
-        const root1 = (-b + Math.sqrt(d)) / (2 * a);
-        const root2 = (-b - Math.sqrt(d)) / (2 * a);
-        const roots = [root1, root2];
+        d *= -1;
+        const vertext = (-b / (2 * a))
+        const root = Math.abs(Math.sqrt(d) / (2 * a));
+        const roots = [vertext + ' + ' + root + ' i ', vertext + ' - ' + root + ' i '];
         return roots
     }
 
@@ -62,6 +63,11 @@ form.addEventListener('submit', e => {
     else if (d === 0) {
         console.log(repeatedRoots(d));
         solution.textContent = 'x = ' + repeatedRoots(d);
+    }
+
+    else if (d < 0) {
+        console.log(twoImgRoots(d));
+        solution.textContent = 'x = ' + twoImgRoots(d)[0] + ', or x = ' + twoImgRoots(d)[1];
     }
 
 
